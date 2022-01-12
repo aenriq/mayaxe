@@ -1,6 +1,14 @@
 import Head from "next/head";
 import Image from "next/image";
 import profilePic from "../public/maya_self.png";
+import { Client } from "@notionhq/client";
+const notion = new Client({ auth: process.env.NOTION_KEY });
+const databaseId = process.env.NOTION_DATABASE_ID;
+(async () => {
+  // const databaseId = process.env.NOTION_DATABASE_ID;
+  const response = await notion.databases.retrieve({ database_id: databaseId });
+  console.log(response);
+})();
 
 export default function Home() {
   return (
