@@ -5,7 +5,6 @@ main {
 
 .avatar {
   width: 250px;
-  z-index: 1;
   padding: 3rem 50px 50px 50px;
   justify-self: center;
   position: fixed;
@@ -28,8 +27,37 @@ main {
 
 .artgrid img {
   padding: 10px;
-  max-width: 200px;
-  max-height: 200px;
+  max-height: 180px;
+  cursor: pointer;
+}
+
+.modalwrapper {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.modalcontainer {
+  padding-top: 10vh;
+  max-height: 60vh;
+  max-width: 75vw;
+  z-index: 1;
+}
+
+.modalcontainer img {
+  max-height: 70vh;
+  max-width: 100%;
+}
+
+.blur {
+  filter: blur(5px);
 }
 
 html,
