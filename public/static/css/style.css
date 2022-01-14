@@ -27,7 +27,7 @@ main {
 
 .artgrid img {
   padding: 10px;
-  max-height: 180px;
+  max-height: 30vh;
   cursor: pointer;
 }
 
