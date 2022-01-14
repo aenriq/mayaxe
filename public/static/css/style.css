@@ -1,29 +1,42 @@
 main {
   width: 100%;
   height: 100%;
-  display: inline-grid;
-  justify-content: center;
-  align-items: center;
-  grid-template-columns: [first] 20% [second] 80%;
 }
 
 .avatar {
+  width: 250px;
+  z-index: 1;
   padding: 3rem 50px 50px 50px;
   justify-self: center;
-  align-items: center;
+  position: fixed;
+  position: -webkit-fixed;
+  overflow-x: hidden;
 }
 
 .avatar img {
   border-radius: 50%;
 }
 
+.artgrid {
+  display: flex;
+  flex-direction: row;
+  margin-left: 250px;
+  padding-right: 100px;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.artgrid img {
+  padding: 10px;
+  max-width: 200px;
+  max-height: 200px;
+}
+
 html,
 body {
-  border-radius: 50%;
-  padding: 0;
-  margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   font-weight: bold;
   font-size: 1.1em;
+  height: 100vh;
 }

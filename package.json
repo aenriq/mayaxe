@@ -6,6 +6,8 @@
     "start": "next start"
   },
   "dependencies": {
+    "@mdx-js/loader": "^1.6.22",
+    "@next/mdx": "^12.0.8",
     "@notionhq/client": "^0.1.9",
     "next": "latest",
     "react": "17.0.2",

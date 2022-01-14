@@ -1,16 +1,10 @@
 import Head from "next/head";
 import Image from "next/image";
 import profilePic from "../public/maya_self.png";
-import { Client } from "@notionhq/client";
-const notion = new Client({ auth: process.env.NOTION_KEY });
-const databaseId = process.env.NOTION_DATABASE_ID;
-(async () => {
-  // const databaseId = process.env.NOTION_DATABASE_ID;
-  const response = await notion.databases.retrieve({ database_id: databaseId });
-  console.log(response);
-})();
+import { queryNotionDB } from "../external-calls/notion";
 
-export default function Home() {
+export default function Home({ imgList }) {
+  // console.log(imgList);
   return (
     <div className="container">
       <Head>
@@ -23,8 +17,22 @@ export default function Home() {
           <Image src={profilePic} width={150} height={150} />
           <div>Maya Enriquez</div>
         </div>
-        <div className="artgrid"></div>
+        <div className="artgrid">
+          {imgList.map((item, index) => {
+            //console.log(item);
+            return <img key={index} src={item[0]} />;
+          })}
+        </div>
       </main>
     </div>
   );
+}
+
+export async function getStaticProps() {
+  const imgList = await queryNotionDB();
+  return {
+    props: {
+      imgList,
+    },
+  };
 }
