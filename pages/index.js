@@ -18,10 +18,11 @@ export default function Home({ imgList }) {
           <div>Maya Enriquez</div>
         </div>
         <div className="artgrid">
-          {imgList.map((item, index) => {
-            //console.log(item);
-            return <img key={index} src={item[0]} />;
-          })}
+          {imgList &&
+            imgList.map((item, index) => {
+              //console.log(item);
+              return <img key={index} src={item[0]} />;
+            })}
         </div>
       </main>
     </div>
