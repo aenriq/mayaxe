@@ -45,7 +45,7 @@ main {
 }
 
 .modalcontainer {
-  padding-top: 15vh;
+  margin-top: 15vh;
   max-height: 60vh;
   max-width: 75vw;
   z-index: 1;
