@@ -26,12 +26,7 @@ export default function Home({ imgList }) {
   // hide the overflow when the modal is open
   // remove overflow when modal closed
   useEffect(() => {
-    // if (modal) {
       document.body.classList.toggle('bodyDuringModal', modal)
-      
-      // return;
-    // }
-    // document.body.style.overflow = "";
   }, [modal]);
 
   return (
