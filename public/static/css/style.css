@@ -41,10 +41,10 @@ main {
   z-index: 1;
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 
 .modalcontainer {
-  padding-top: 15vh;
   max-height: 60vh;
   max-width: 75vw;
   z-index: 1;
