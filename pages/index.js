@@ -63,7 +63,7 @@ export default function Home({ imgList }) {
   );
 }
 
-export async function getServerProps() {
+export async function getServerSideProps() {
   const imgList = await queryNotionDB();
   return {
     props: {
