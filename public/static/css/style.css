@@ -2,13 +2,16 @@ main {
   width: 100%;
   height: 100%;
 }
-
+.bodyDuringModal {
+  overflow-y: scroll;
+  height: 100vh;
+  position: fixed;
+}
 .avatar {
   width: 250px;
   padding: 3rem 50px 50px 50px;
   justify-self: center;
   position: fixed;
-  position: -webkit-fixed;
   overflow-x: hidden;
 }
 
@@ -27,7 +30,7 @@ main {
 
 .artgrid img {
   padding: 10px;
-  max-height: 180px;
+  max-height: 30vh;
   cursor: pointer;
 }
 

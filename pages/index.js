@@ -26,11 +26,7 @@ export default function Home({ imgList }) {
   // hide the overflow when the modal is open
   // remove overflow when modal closed
   useEffect(() => {
-    if (modal) {
-      document.body.style.overflow = "hidden";
-      return;
-    }
-    document.body.style.overflow = "";
+      document.body.classList.toggle('bodyDuringModal', modal)
   }, [modal]);
 
   return (
@@ -43,7 +39,7 @@ export default function Home({ imgList }) {
         </div>
       )}
       <Head>
-        <title>Create Next App</title>
+        <title>Maya's Portfolio</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
