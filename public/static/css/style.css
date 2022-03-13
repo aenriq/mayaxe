@@ -3,9 +3,10 @@ main {
   height: 100%;
 }
 .bodyDuringModal {
-  overflow-y: scroll;
-  height: 100vh;
-  position: fixed;
+  overflow: hidden;
+  /* height: 100vh; */
+  /* position: fixed; */
+  padding-right: 15px;
 }
 .avatar {
   width: 250px;
@@ -52,7 +53,7 @@ main {
   padding-top: 15vh;
   max-height: 60vh;
   max-width: 75vw;
-  z-index: 1;
+  z-index: 999;
 }
 
 .modalcontainer img {
