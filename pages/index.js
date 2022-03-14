@@ -62,7 +62,7 @@ export default function Home({ imgList, imgTitle }) {
       )}
 
       <Head>
-        <title>Mayas Portfolio</title>
+        <title>Maya's Portfolio</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
