@@ -5,13 +5,14 @@ import { queryNotionDB } from "../external-calls/notion";
 import { useState, useRef, useEffect } from "react";
 
 export default function Home({ imgList }) {
+  console.log(imgList)
   const [modal, setModal] = useState(false);
   const [images, setimages] = useState([]);
+
   const imgClick = (index) => {
     setModal(true);
     const findImg = imgList[index];
     setimages(findImg);
-    console.log(findImg);
   };
 
   const modalRef = useRef(null);
@@ -38,6 +39,9 @@ export default function Home({ imgList }) {
           </div>
         </div>
       )}
+
+
+
       <Head>
         <title>Create Next App</title>
         <link rel="icon" href="/favicon.ico" />
@@ -51,7 +55,11 @@ export default function Home({ imgList }) {
         <div className={`${modal ? "blur artgrid" : "artgrid"}`}>
           {imgList &&
             imgList.map((item, index) => (
-              <img key={index} src={item[0]} onClick={() => imgClick(index)} />
+              <div className="image-container">
+                <img key={index} src={item[0]} onClick={() => imgClick(index)} />
+                <div className="image-details">Title // 2022</div>
+              </div>
+              
             ))}
         </div>
       </main>
