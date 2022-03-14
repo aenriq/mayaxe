@@ -13,7 +13,6 @@ main {
   padding: 3rem 50px 50px 50px;
   justify-self: center;
   position: fixed;
-  position: -webkit-fixed;
   overflow-x: hidden;
 }
 
@@ -32,7 +31,7 @@ main {
 
 .artgrid img {
   padding: 10px;
-  max-height: 180px;
+  max-height: 30vh;
   cursor: pointer;
 }
 
@@ -50,15 +49,14 @@ main {
 }
 
 .modalcontainer {
-  /* padding-top: 15vh; */
-  /* max-height: 60vh; */
+
   height: 80vh;
   z-index: 999;
+
 }
 
 .modalcontainer img {
   height: 100%;
-  /* padding: 100px; */
 
 }
 
