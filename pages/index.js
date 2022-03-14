@@ -5,7 +5,6 @@ import { queryNotionDB } from "../external-calls/notion";
 import { useState, useRef, useEffect } from "react";
 
 export default function Home({ imgList }) {
-  console.log(imgList)
   const [modal, setModal] = useState(false);
   const [images, setimages] = useState([]);
 
@@ -51,6 +50,10 @@ export default function Home({ imgList }) {
         <div className={`${modal ? "blur avatar" : "avatar"}`}>
           <Image src={profilePic} width={150} height={150} />
           <div>Maya Enriquez</div>
+          <div className="user-details">
+            <div>About / CV</div>
+            <div>Contact</div>
+          </div>
         </div>
         <div className={`${modal ? "blur artgrid" : "artgrid"}`}>
           {imgList &&

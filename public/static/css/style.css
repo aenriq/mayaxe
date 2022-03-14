@@ -73,6 +73,7 @@ main {
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: white;
 }
 
 .modalcontainer {
@@ -95,4 +96,19 @@ body {
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   font-weight: bold;
   font-size: 1.1em;
+}
+
+.user-details{
+  font-family: 'JetBrains Mono', monospace;
+  font-size: .9rem;
+  font-weight: 400;
+  margin-top: 40px;
+}
+
+.user-details div:not(:first-child){
+  margin-top: 15px;
+}
+
+.user-details div{
+  cursor: pointer;
 }
