@@ -4,9 +4,10 @@ import profilePic from "../public/maya_self.png";
 import { queryNotionDB } from "../external-calls/notion";
 import { useState, useRef, useEffect } from "react";
 
-export default function Home({ imgList }) {
+export default function Home({ imgList, imgTitle }) {
   const [modal, setModal] = useState(false);
   const [images, setimages] = useState([]);
+  const [index, setIndex] = useState(0);
 
   const imgClick = (index) => {
     setModal(true);
@@ -19,6 +20,7 @@ export default function Home({ imgList }) {
     if (modalRef.current && modalRef.current.contains(e.target)) {
       return;
     }
+    setIndex(0);
     setModal(false);
   };
 
@@ -26,7 +28,7 @@ export default function Home({ imgList }) {
   // hide the overflow when the modal is open
   // remove overflow when modal closed
   useEffect(() => {
-      document.body.classList.toggle('bodyDuringModal', modal)
+    document.body.classList.toggle("bodyDuringModal", modal);
   }, [modal]);
 
   return (
@@ -34,12 +36,19 @@ export default function Home({ imgList }) {
       {modal && (
         <div className="modalwrapper" onClick={(e) => handleModalClick(e)}>
           <div ref={modalRef} className="modalcontainer">
-            <img src={images[0]}></img>
+            <img
+              className="modalimage"
+              onClick={() => {
+                setIndex((index + 1) % images.length);
+              }}
+              src={images[index]}
+            />
+            <div>
+              {index + 1}/{images.length}
+            </div>
           </div>
         </div>
       )}
-
-
 
       <Head>
         <title>Create Next App</title>
@@ -52,17 +61,22 @@ export default function Home({ imgList }) {
           <div>Maya Enriquez</div>
           <div className="user-details">
             <div>About / CV</div>
-            <div>Contact</div>
+            <div>
+              <a href="mailto: Menrique@risd.edu">Contact</a>
+            </div>
           </div>
         </div>
         <div className={`${modal ? "blur artgrid" : "artgrid"}`}>
           {imgList &&
             imgList.map((item, index) => (
               <div className="image-container">
-                <img key={index} src={item[0]} onClick={() => imgClick(index)} />
-                <div className="image-details">Title // 2022</div>
+                <img
+                  key={index}
+                  src={item[0]}
+                  onClick={() => imgClick(index)}
+                />
+                <div className="image-details">{imgTitle[index]}</div>
               </div>
-              
             ))}
         </div>
       </main>
@@ -71,10 +85,15 @@ export default function Home({ imgList }) {
 }
 
 export async function getServerSideProps() {
-  const imgList = await queryNotionDB();
+  const data = await queryNotionDB();
+  const imgList = data.imgArr;
+  const imgTitle = data.imgTitle;
+  console.log(imgList.length);
+  console.log(imgTitle.length);
   return {
     props: {
       imgList,
+      imgTitle,
     },
   };
 }

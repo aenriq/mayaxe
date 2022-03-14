@@ -1,5 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600&family=Poppins:ital,wght@0,300;0,400;1,400&display=swap');
-
+@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600&family=Poppins:ital,wght@0,300;0,400;1,400&display=swap");
 
 main {
   width: 100%;
@@ -29,13 +28,21 @@ main {
   border-radius: 50%;
 }
 
+a {
+  color: black;
+  text-decoration: none; /* no underline */
+}
 
+a:hover {
+  color: white;
+  text-decoration: none; /* no underline */
+  background-color: black;
+}
 
 .artgrid {
   display: flex;
   margin-left: 250px;
   /* padding-right: 100px; */
-
 }
 
 .artgrid img {
@@ -47,19 +54,18 @@ main {
   border-radius: 20px;
 }
 
-.artgrid img:hover{
+.artgrid img:hover {
   transform: scale(0.95);
 }
 
-.image-details{
-  font-family: 'JetBrains Mono', monospace;
+.image-details {
+  font-family: "JetBrains Mono", monospace;
   font-weight: 400;
   margin-top: 20px;
 }
 
-.image-container{
+.image-container {
   padding: 10px;
-
 }
 
 .modalwrapper {
@@ -77,7 +83,6 @@ main {
 }
 
 .modalcontainer {
-
   height: 80vh;
   z-index: 999;
 }
@@ -98,17 +103,17 @@ body {
   font-size: 1.1em;
 }
 
-.user-details{
-  font-family: 'JetBrains Mono', monospace;
-  font-size: .9rem;
+.user-details {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.9rem;
   font-weight: 400;
   margin-top: 40px;
 }
 
-.user-details div:not(:first-child){
+.user-details div:not(:first-child) {
   margin-top: 15px;
 }
 
-.user-details div{
+.user-details div {
   cursor: pointer;
 }
