@@ -3,9 +3,10 @@ main {
   height: 100%;
 }
 .bodyDuringModal {
-  overflow-y: scroll;
-  height: 100vh;
-  position: fixed;
+  overflow: hidden;
+  /* height: 100vh; */
+  /* position: fixed; */
+  padding-right: 15px;
 }
 .avatar {
   width: 250px;
@@ -36,7 +37,6 @@ main {
 
 .modalwrapper {
   position: fixed;
-  width: 100vw;
   height: 100vh;
   top: 0;
   right: 0;
@@ -49,14 +49,15 @@ main {
 }
 
 .modalcontainer {
-  max-height: 60vh;
-  max-width: 75vw;
-  z-index: 1;
+
+  height: 80vh;
+  z-index: 999;
+
 }
 
 .modalcontainer img {
-  max-height: 70vh;
-  max-width: 100%;
+  height: 100%;
+
 }
 
 .blur {
