@@ -91,6 +91,18 @@ a:hover {
   height: 100%;
 }
 
+.modalfooter {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.modalfooterclose:hover {
+  cursor: pointer;
+  color: white;
+  background-color: black;
+}
+
 .blur {
   filter: blur(5px);
 }

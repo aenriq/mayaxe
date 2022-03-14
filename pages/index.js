@@ -43,15 +43,26 @@ export default function Home({ imgList, imgTitle }) {
               }}
               src={images[index]}
             />
-            <div>
-              {index + 1}/{images.length}
+            <div className="modalfooter">
+              <div>
+                {index + 1}/{images.length}
+              </div>
+              <div
+                className="modalfooterclose"
+                onClick={() => {
+                  setModal(false);
+                  setIndex(0);
+                }}
+              >
+                X
+              </div>
             </div>
           </div>
         </div>
       )}
 
       <Head>
-        <title>Create Next App</title>
+        <title>Mayas Portfolio</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
@@ -60,7 +71,7 @@ export default function Home({ imgList, imgTitle }) {
           <Image src={profilePic} width={150} height={150} />
           <div>Maya Enriquez</div>
           <div className="user-details">
-            <div>About / CV</div>
+            {/* <div>About / CV</div> */}
             <div>
               <a href="mailto: Menrique@risd.edu">Contact</a>
             </div>
@@ -88,8 +99,6 @@ export async function getServerSideProps() {
   const data = await queryNotionDB();
   const imgList = data.imgArr;
   const imgTitle = data.imgTitle;
-  console.log(imgList.length);
-  console.log(imgTitle.length);
   return {
     props: {
       imgList,
