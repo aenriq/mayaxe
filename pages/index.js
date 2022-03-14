@@ -44,11 +44,16 @@ export default function Home({ imgList, imgTitle }) {
               src={images[index]}
             />
             <div className="modalfooter">
-              <div>
+              <div
+                className="modalfooteritem"
+                onClick={() => {
+                  setIndex((index + 1) % images.length);
+                }}
+              >
                 {index + 1}/{images.length}
               </div>
               <div
-                className="modalfooterclose"
+                className="modalfooteritem"
                 onClick={() => {
                   setModal(false);
                   setIndex(0);

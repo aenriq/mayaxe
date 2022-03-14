@@ -85,10 +85,16 @@ a:hover {
 .modalcontainer {
   height: 80vh;
   z-index: 999;
+  justify-content: center;
 }
 
 .modalcontainer img {
   height: 100%;
+}
+
+.modalcontainer img:hover {
+  height: 100%;
+  cursor: pointer;
 }
 
 .modalfooter {
@@ -97,7 +103,7 @@ a:hover {
   justify-content: space-between;
 }
 
-.modalfooterclose:hover {
+.modalfooteritem:hover {
   cursor: pointer;
   color: white;
   background-color: black;
